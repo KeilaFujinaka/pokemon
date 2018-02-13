@@ -22,22 +22,45 @@ types = {"normal": 0, "fighting" : 1, "flying": 2, "poison": 3, "ground": 4, "ro
     
 print("Welcome to the Pokemon type strength/weakness program.")
 
-my_type = input("What type is your pokemon? ").lower()
-enemy_type = input("What type of pokemon do you think you'll be up against? ").lower()
+dmg_q = input("Do you want to know the damage you'll do on someone else, or the damage that someone else will do on you? (Choose 1 or 2 to pick your option) ")
 
-row = types[my_type]
-col = types[enemy_type]
+if dmg_q == "1": 
+    
+    my_type = input("What type is your pokemon? ").lower()
+    enemy_type = input("What type of pokemon do you think you'll be up against? ").lower()
 
+    row = types[my_type]
+    col = types[enemy_type]
 
-damage = damage[row][col]
+    damage = damage[row][col]
 
-if damage == 1:
-    print("Your " + my_type + " type pokemon will do a normal amount of damage to a " + enemy_type + " pokemon.")
+    if damage == 1:
+        print("Your " + my_type + " type pokemon will do a normal amount of damage to a " + enemy_type + " pokemon.")
 
-elif damage == 0.5:
-    print("Your " + my_type + " type pokemon will only do half damage to a " + enemy_type + " type pokemon.")
+    elif damage == 0.5:
+        print("Your " + my_type + " type pokemon will only do half damage to a " + enemy_type + " type pokemon.")
 
-elif damage == 2:
-    print("Your " + my_type + " type pokemon will do double damage to a " + enemy_type + " type pokemon.")
+    elif damage == 2:
+        print("Your " + my_type + " type pokemon will do double damage to a " + enemy_type + " type pokemon.")
+    input()
 
+if dmg_q == "2":
+    
+    my_type = input("What type is your pokemon? ").lower()
+    enemy_type = input("What type of pokemon do you think you'll be up against? ").lower()
+
+    row = types[enemy_type]
+    col = types[my_type]
+    
+    damage = damage[row][col]
+    
+    if damage == 1:
+        print("Your " + my_type + " type pokemon take a normal amount of damage from a " + enemy_type + " pokemon.")
+
+    elif damage == 0.5:
+        print("Your " + my_type + " type pokemon will only take half damage from a " + enemy_type + " type pokemon.")
+
+    elif damage == 2:
+        print("Your " + my_type + " type pokemon will take double damage from a " + enemy_type + " type pokemon.")
+    input()
 
